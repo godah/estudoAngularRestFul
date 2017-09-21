@@ -1,0 +1,84 @@
+<html  ng-app="Loja1">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="resources/script/angular.min.js"></script>
+<script type="text/javascript" src="resources/script/primeiroController2.js"></script>
+<script type="text/javascript" src="resources/script/angular-route.js"></script>
+</head>
+
+<body id="corpo">
+
+	<h1>Expressão 1</h1>
+	<p>{{ 5 + 5}}</p>
+	
+	<h1>Expressão 2</h1>
+	<div ng-init="myCol=red">
+		<input style="background-color: {{myCol}}" ng-model="myCol" value="{{myCol}}"/>
+	</div>
+	<br/>
+	
+	<h1>Expressão 3</h1>
+	<div ng-init="valor=2;cota=5">
+		<p>Total em dolar: {{valor * cota}}</p>
+	</div>
+	<br/>
+	
+	<h1>Expressão 4</h1>
+	<div ng-init="quantity=1;cost=5">
+		<p>Total em dolar: <span ng-bind="quantity * cost"></span></p>
+	</div>
+	<br/>
+	
+	<h1>Expressão 5 String</h1>
+	<div ng-init="firstName='John';lastName='Doe'">
+		<p>Meu nome é: {{firstName+" "+lastName}}</p>
+	</div>
+	<br/>
+	
+	<h1>Expressão 6 String Bind</h1>
+	<div ng-init="firstName='John';lastName='Doe'">
+		<p>Meu nome é: <span ng-bind="firstName+' '+lastName"></span></p>
+	</div>
+	<br/>
+	
+	
+	<h1>AngularJs Objects (Json)</h1>
+	<div ng-init="person={firstName:'John', lastName:'Doe'}">
+		<p>Meu nome é: {{person.lastName}}</p>
+	</div>
+	
+	<div ng-init="person={firstName:'John', lastName:'Doe'}">
+		<p>Meu nome é: <span ng-bind="person.lastName"></span></p>
+	</div>
+	
+	<br/>
+	
+	<h1>AngualarJs Arrays</h1>
+	<div ng-init="points=[1,15,19,2,40]"></div>
+	<p>Resultado: {{points[2]}}</p>
+	
+	<div ng-init="points=[1,15,19,2,40]"></div>
+	<p>Resultado: <span ng-bind="points[2]"></span></p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<br/>
+	<p>{{quant}}</p>
+	<br/>
+	
+	<div>
+		<ul>
+			<li ng-repeat="fruta in frutas">{{fruta}}</li>
+		</ul>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: zero_angularjs_spring_mvc
+Bundle-SymbolicName: zero_angularjs_spring_mvc
+Bundle-Version: 1.0.0.qualifier

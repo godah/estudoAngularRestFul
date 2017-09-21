@@ -1,0 +1,46 @@
+<html  ng-app="combobox">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="resources/script/angular.min.js"></script>
+<script type="text/javascript" src="resources/script/combobox.js"></script>
+<script type="text/javascript" src="resources/script/angular-route.js"></script>
+<link rel="stylesheet" href="resources/css/style.css"> 
+</head>
+
+<body id="corpo">
+	<div ng-controller="comboboxController">
+		<select ng-model="selectedName" ng-options="x for x in names">
+		</select>
+	</div>
+	<br/><br/>
+	
+	<div ng-controller="comboboxController">
+		<select>
+			<option ng-repeat="x in names">{{x}}</option>
+		</select>
+	</div>
+	
+	<br/><br/>
+	
+	<div ng-controller="comboboxControllerJson">
+		<select ng-model="nomeSelecionado">
+			<option ng-repeat="x in lista" value="{{x.nome}}">{{x.nome}}</option>
+		</select>
+		<h1>Selecionado:{{nomeSelecionado}}</h1>
+	</div>
+		
+	<br/><br/>
+	
+	<div ng-controller="comboboxControllerJson">
+		<p>Selecione o nome:</p>
+		<select ng-model="selecionado" ng-options="x for (x, y) in lista">
+		</select>
+		<h1>Nome: {{selecionado.nome}}</h1>
+		<h2>Cidade: {{selecionado.cidade}}</h2>
+		<br/><br/>
+	</div>
+	
+	
+</body>
+</html>

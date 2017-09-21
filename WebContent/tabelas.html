@@ -1,0 +1,90 @@
+<html  ng-app="tabela">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="resources/script/angular.min.js"></script>
+<script type="text/javascript" src="resources/script/tabelas.js"></script>
+<script type="text/javascript" src="resources/script/angular-route.js"></script>
+<link rel="stylesheet" href="resources/css/style.css"> 
+</head>
+
+<body id="corpo">
+	<div ng-controller="pegarRespostaTabela">
+		<table>
+			<tr ng-repeat="x in lista">
+				<td>{{x.nome}}</td>
+				<td>{{x.cidade}}</td>
+			</tr>
+		</table>		
+	</div>
+	
+	<br/><br/><br/>
+	
+	<h2>Dados Ordenados por Cidade</h2>
+	<div ng-controller="pegarRespostaTabela">
+		<table>
+			<tr ng-repeat="x in lista | orderBy : 'cidade'">
+				<td>{{x.nome}}</td>
+				<td>{{x.cidade}}</td>
+			</tr>
+		</table>		
+	</div>
+	
+	<br/><br/><br/>
+
+	<h2>Dados Ordenados por Nome</h2>
+	<div ng-controller="pegarRespostaTabela">
+		<table>
+			<tr ng-repeat="x in lista | orderBy : 'nome'">
+				<td>{{x.nome}}</td>
+				<td>{{x.cidade}}</td>
+			</tr>
+		</table>		
+	</div>
+	
+	<br/><br/><br/>
+	
+	<h2>Dados Maiusculo</h2>
+	<div ng-controller="pegarRespostaTabela">
+		<table>
+			<tr ng-repeat="x in lista">
+				<td>{{x.nome}}</td>
+				<td>{{x.cidade | uppercase}}</td>
+			</tr>
+		</table>		
+	</div>
+	
+	<br/><br/><br/>
+	
+	<h2>Dados Indexados</h2>
+	<div ng-controller="pegarRespostaTabela">
+		<table>
+			<tr ng-repeat="x in lista">
+				<td>{{$index + 1}}</td>
+				<td>{{x.nome}}</td>
+				<td>{{x.cidade}}</td>
+			</tr>
+		</table>		
+	</div>
+	
+	<br/><br/><br/>
+	
+	<h2>Dados Coloridos</h2>
+	<div ng-controller="pegarRespostaTabela">
+		<table>
+			<tr ng-repeat="x in lista">
+				<td ng-if="$odd" style="background-color: lime;">{{x.nome}}</td>
+				<td ng-if="$even">{{x.nome}}</td>
+				<td ng-if="$odd" style="background-color: lime;">{{x.cidade}}</td>
+				<td ng-if="$even">{{x.cidade}}</td>
+			</tr>
+		</table>		
+	</div>
+	
+	<br/><br/><br/>
+	
+	
+		
+	
+</body>
+</html>

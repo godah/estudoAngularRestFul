@@ -1,0 +1,26 @@
+<html  ng-app="Loja3">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="resources/script/angular.min.js"></script>
+<script type="text/javascript" src="resources/script/primeiroController3.js"></script>
+<script type="text/javascript" src="resources/script/angular-route.js"></script>
+</head>
+
+<body id="corpo">
+
+	
+	<div w3-test-directive></div>
+	
+	<form name="myForm">
+		Email:
+		<input type="email" name="myAddress" ng-model="text"/>
+		<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+		<br/>
+		
+		
+		
+	</form>
+	
+</body>
+</html>

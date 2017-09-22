@@ -9,6 +9,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import jdk.nashorn.internal.runtime.JSONListAdapter;
+
 
 
 @WebServlet("/pessoas/")
@@ -24,22 +26,33 @@ private static final long serialVersionUID = 1L;
 		response.setHeader("Cache-Control", "nocache");
 		response.setCharacterEncoding("utf-8");
 		
-		System.out.println(request.getParameter("codPessoa"));
+		System.out.println("PessoasParametros");
+		//System.out.println(request.getParameter("codPessoa"));
 		
 		
 		
 		JSONObject jsonObject;
-		
-		
-			jsonObject = new JSONObject();
-			try {
-				jsonObject.put("codPessoa", request.getParameter("codPessoa"));
-				jsonObject.put("cidade", "curitiba");
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
+		JSONArray jsonArray = new JSONArray();
+		jsonObject = new JSONObject();
+		try {
+			jsonObject.put("codPessoa", 518);
+			jsonObject.put("cidade", "salvador");
+			jsonArray.put(jsonObject);
+			jsonObject.put("codPessoa", 538);
+			jsonObject.put("cidade", "salvador");
+			jsonArray.put(jsonObject);
+			jsonObject.put("codPessoa", 215);
+			jsonObject.put("cidade", "salvador");
+			jsonArray.put(jsonObject);
 			
-		response.getWriter().write(jsonObject.toString());
+			//response.getWriter().write(jsonObject.toString());//por codPessoa
+			response.getWriter().write(jsonArray.toString());
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	
+		
+		
 	
 	}
 }

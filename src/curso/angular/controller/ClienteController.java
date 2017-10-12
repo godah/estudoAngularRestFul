@@ -8,6 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.google.gson.Gson;
 
 import curso.angular.dao.DaoImplementacao;
 import curso.angular.dao.DaoInterface;
@@ -21,7 +24,8 @@ class ClienteController extends DaoImplementacao<Cliente> implements DaoInterfac
 	}
 	
 	@RequestMapping(value="listar", method=RequestMethod.GET)
-	public ResponseEntity<List<Cliente>> listar(){
+	@ResponseBody
+	public String listar(){ 
 		
 		List<Cliente> clientes = new ArrayList<Cliente>();
 		Cliente cliente = new Cliente();
@@ -33,8 +37,15 @@ class ClienteController extends DaoImplementacao<Cliente> implements DaoInterfac
 		
 		clientes.add(cliente);
 		
-		return new ResponseEntity<List<Cliente>>(clientes, HttpStatus.OK);
+		cliente = new Cliente();
 		
+		cliente.setId(12L);
+		cliente.setEndereco("Rua do cliente3");
+		cliente.setNome("Ana");
+		cliente.setTelefone("31 787897978");
+		
+		clientes.add(cliente);
+		
+		return new Gson().toJson(clientes);
 	}
-	
 }

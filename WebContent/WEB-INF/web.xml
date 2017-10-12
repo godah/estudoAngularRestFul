@@ -50,6 +50,7 @@
   	<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
   </listener>
   
+    
   <resource-ref>
   	<description>DataSource datasource</description>
   	<res-ref-name>jdbc/datasource</res-ref-name>
@@ -69,4 +70,5 @@
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
   
+     
 </web-app>

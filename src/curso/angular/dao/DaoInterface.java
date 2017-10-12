@@ -2,7 +2,9 @@ package curso.angular.dao;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional(noRollbackFor = Exception.class)
 @Service
 public interface DaoInterface<T> {
 	
